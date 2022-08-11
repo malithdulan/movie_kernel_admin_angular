@@ -1,0 +1,139 @@
+<mat-toolbar>
+  <span>{{service.form.controls['$key'].value?"Modify movies":"New movies"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+  <mat-grid-list cols="2" rowHeight="600px">
+    <mat-grid-tile class="left-mat-grid">
+      <div class="controles-container" >
+        <input type="hidden" formControlName="$key">
+        <mat-form-field>
+          <input formControlName="secondimgurl" matInput placeholder="secondimgurl">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="mainimgurl" matInput placeholder="mainimgurl">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="imdb" matInput placeholder="imdb">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="filmname" matInput placeholder="filmname">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="searchname" matInput placeholder="search name">
+            
+          </mat-form-field>
+        <mat-form-field>
+          <input formControlName="director" matInput placeholder="director">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="runtime" matInput placeholder="runtime">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="actors" matInput placeholder="actors">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="subcategory" matInput placeholder="subcategory">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="maincategory" matInput placeholder="maincategory">
+        </mat-form-field>
+
+        <div class="add-bottom-padding">
+          <mat-checkbox formControlName="bollywood">bollywood</mat-checkbox>
+        </div>
+        <div class="add-bottom-padding">
+          <mat-checkbox formControlName="hollywood">hollywood</mat-checkbox>
+        </div>
+        <div class="add-bottom-padding">
+          <mat-checkbox formControlName="kollywood">kollywood</mat-checkbox>
+        </div>
+        <div class="add-bottom-padding">
+          <mat-checkbox formControlName="populer">populer</mat-checkbox>
+        </div>
+        <div class="add-bottom-padding">
+          <mat-checkbox formControlName="superhero">superhero</mat-checkbox>
+        </div>
+
+        <mat-form-field>
+            <input formControlName="uploaddate" matInput [matDatepicker]="picker" placeholder="Upload Date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+        </div>
+        
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="right-mat-grid">
+      <div class="controles-container" >
+          
+            <mat-form-field>
+              <input formControlName="b720p" matInput placeholder="b720p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="sb720p" matInput placeholder="size of b720p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="b1080p" matInput placeholder="b1080p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="sb1080p" matInput placeholder="size of b1080p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="w720p" matInput placeholder="w720p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="sw720p" matInput placeholder="size of w720p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="w1080p" matInput placeholder="w1080p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="sw1080p" matInput placeholder="size of w1080p">
+            </mat-form-field>
+
+            
+            
+          
+            <mat-form-field>
+              <input formControlName="mb720p" matInput placeholder="magent b720p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="smb720p" matInput placeholder="magnet size of b720p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="mb1080p" matInput placeholder="magnet b1080p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="smb1080p" matInput placeholder="magnet size of b1080p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="mw720p" matInput placeholder="magnet w720p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="smw720p" matInput placeholder="magnet size of w720p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="mw1080p" matInput placeholder="magnet w1080p">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="smw1080p" matInput placeholder="magnet size of w1080p">
+            </mat-form-field>
+
+            
+            
+            <mat-form-field>
+              <input formControlName="cam" matInput placeholder="cam">
+            </mat-form-field>
+
+        
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
